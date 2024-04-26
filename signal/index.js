@@ -3,7 +3,9 @@ import { effect } from "./effect.js";
 
 const counter = new Signal.State(0);
 
-effect(() => document.getElementById('counter').innerText = counter.get());
+effect(() => {
+  document.getElementById('counter').innerText = counter.get();
+});
 
 document.getElementById('minus').addEventListener('click', function() {
   counter.set(counter.get() - 1);
